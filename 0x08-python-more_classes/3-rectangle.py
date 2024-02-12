@@ -3,6 +3,7 @@
 
 class Rectangle:
     """Represent a Rectangle"""
+
     def __init__(self, width=0, height=0):
         """Initialize a new Rectangle
         Args:
@@ -49,3 +50,14 @@ class Rectangle:
         if self.__width != 0 or self.__height != 0:
             perr = (self.__width + self.__height) * 2
         return (perr)
+
+    def __str__(self):
+        """Return the prentable rep of the Rectangle"""
+        if self.__width == 0 or self.__height == 0:
+            return ("")
+        new = []
+        for i in range(self.__height):
+            [new.append('#') for j in range(self.__width)]
+            if i != self.__height - 1:
+                new.append("\n")
+        return ("".join(new))
