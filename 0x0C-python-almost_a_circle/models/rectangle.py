@@ -12,8 +12,8 @@ class Rectangle(Base):
         Args:
             width (int): The width of the Rectangle.
             height (int): The height of the new Rectangle.
-            x (int): The.
-            y (int): The.
+            x (int): The position of th Reactangle on the x axis.
+            y (int): The positional y axis of the Rectangle.
         """
         self.width = width
         self.height = height
@@ -78,13 +78,17 @@ class Rectangle(Base):
         return (self.__width * self.__height)
 
     def display(self):
-        """Print the Rectangle"""
+        """Print the Rectangle."""
+        for k in range(self.__y):
+            print("")
         for i in range(self.__height):
+            for a in range(self.__x):
+                print(" ", end="")
             for j in range(self.__width):
                 print("#", end="")
             print("")
 
     def __str__(self):
-        """Return the string representation to the Rectangle"""
+        """Return the string representation to the Rectangle."""
         return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x,
                 self.__y, self.__width, self.__height))
