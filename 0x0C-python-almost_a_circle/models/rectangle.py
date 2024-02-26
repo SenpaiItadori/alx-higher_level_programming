@@ -92,3 +92,35 @@ class Rectangle(Base):
         """Return the string representation to the Rectangle."""
         return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x,
                 self.__y, self.__width, self.__height))
+
+    def update(self, *args, **kwargs):
+        """Assignes new values to corresponding attributes of the Rectangle"""
+        if args:
+            for num, arg in enumerate(args):
+                if num == 0:
+                    self.id = arg
+                elif num == 1:
+                    self.width = arg
+                elif num == 2:
+                    self.height = arg
+                elif num == 3:
+                    self.x = arg
+                elif num == 4:
+                    self.y = arg
+                else:
+                    continue
+
+            elif len(kwargs) > 0:
+                for key, value in kwargs.items():
+                    if key == "id":
+                        self.id = value
+                    elif key == "width":
+                        self.width = value
+                    elif key == "height":
+                        self.height = value
+                    elif key == "x":
+                        self.x = value
+                    elif key == "y":
+                        self.y = value
+                    else:
+                        break
